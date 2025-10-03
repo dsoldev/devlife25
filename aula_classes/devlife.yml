@@ -1,0 +1,11 @@
+course: devlife-25-2
+difficulty: 1
+slug: aulas/pygame/eventos/exercises/base-eventos
+studentFile: jogo.py
+tags:
+- pygame
+- code-exercise
+telemetryEndpoint: https://devlife-api.insper-comp.com.br/api/telemetry
+testFile: test_jogo.py
+title: Recebendo eventos
+weight: 1
