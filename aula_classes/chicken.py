@@ -1,10 +1,31 @@
 import pygame
 
 class Player:
-    def __init__(self, x=0, y=0):
+    def __init__(self, x=512, y=384):
         self.x = x 
         self.y = y
+        self.jogador_vx = 1
+        self.jogador_vy = 1
+        self.sprite = pygame.image.load('player.png')
 
+    def desenha(self, window):
+        window.blit(self.sprite, (self.x, self.y))
+    
+    def recebe_eventos(self, keys):
+            # Atualiza posição do jogador baseado nas teclas pressionadas
+        if keys[pygame.K_LEFT] or keys[pygame.K_a]:
+            self.x -= self.jogador_vx
+        if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
+            self.x += self.jogador_vx
+        if keys[pygame.K_UP] or keys[pygame.K_w]:
+            self.y -= self.jogador_vy
+        if keys[pygame.K_DOWN] or keys[pygame.K_s]:
+            self.y += self.jogador_vy
+    
+    def update(self):
+        # Mantém o jogador dentro dos limites da tela
+        self.x = max(0, min(self.x, 1024 - 32))  # Assumindo largura do jogador de 32px
+        self.y = max(0, min(self.y, 768 - 32))  # Assumindo altura do jogador de 32px
 
 class Chicken:
     
