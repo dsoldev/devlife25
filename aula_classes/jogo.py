@@ -2,9 +2,6 @@ import pygame
 import random
 from chicken import *
 
-
-
-
 def inicializa():
     pygame.init()
     window = pygame.display.set_mode((1024, 768))
